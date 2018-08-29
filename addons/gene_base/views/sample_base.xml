@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="sample_base_tree" model="ir.ui.view">
+            <field name="name">sample base tree</field>
+            <field name="model">sample.base</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sample_id"/>
+                    <field name="sample_num"/>
+                    <field name="sample_type"/>
+                    <field name="datelanded"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sample_base_form" model="ir.ui.view">
+            <field name="name">sample base form</field>
+            <field name="model">sample.base</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="import_sequence_variation" string="匯入序列變異"
+                                    type="object" class="oe_stat_button" icon="fa-upload">
+                            </button>
+                            <button name="import_gene_impact" string="匯入基因功能影響評估"
+                                    type="object" class="oe_stat_button" icon="fa-upload">
+                            </button>
+                            <button name="delete_off_target_data" string="刪除基因評估有off_target的資料"
+                                    type="object" class="oe_stat_button" icon="fa-book" >
+                            </button>
+                            <button name="delete_c_dna_field_c_point" string="去除基因功能序列說明的c."
+                                    type="object" class="oe_stat_button" icon="fa-book" >
+                            </button>
+                        </div>
+                        <!--<group col="4">-->
+                            <!--<field name="subject_code"/>-->
+                            <!--<field name="datelanded"/>-->
+                        <!--</group>-->
+                        <!--<group col="7">-->
+                            <!--<field name="sample_id"/>-->
+                            <!--<field name="sample_num"/>-->
+                            <!--<field name="sample_type" colspan="3"/>-->
+                        <!--</group>-->
+                        <!--<notebook>-->
+                            <!--<page string="序列變異綜合表">-->
+                                <!--<field name="sequence_variation_code">-->
+
+                                <!--</field>-->
+                            <!--</page>-->
+                            <!--<page string="基因功能影響評估">-->
+                                <!--<field name="gene_impact_code">-->
+                                <!--</field>-->
+                            <!--</page>-->
+                            <!--<page string="藥物使用影響評估">-->
+                                <!--<field name="medicine_impact_code">-->
+                                <!--</field>-->
+                            <!--</page>-->
+                             <!--<page string="定序實驗結果說明">-->
+                                 <!--<span STYLE='FONT-SIZE:25PX'>檢測結果摘要</span>-->
+                                 <!--<group>-->
+                                    <!--<field name="sequence_variation_text"/>-->
+                                    <!--<field name="medicine_impact_text"/>-->
+                                    <!--<field name="disease_prognosis_text"/>-->
+                                 <!--</group>-->
+                                <!--<group>-->
+                                    <!--<field name="dna_source"/>-->
+                                    <!--<field name="dna_method"/>-->
+                                    <!--<field name="Continu_sequel_preparation"/>-->
+                                    <!--<field name="sequence_platform"/>-->
+                                    <!--<field name="sequence_mode"/>-->
+                                    <!--<field name="preliminary_num"/>-->
+                                    <!--<field name="comparison_database"/>-->
+                                    <!--<field name="human_num"/>-->
+                                    <!--<field name="human_percent"/>-->
+                                    <!--<field name="target_num"/>-->
+                                    <!--<field name="target_percent"/>-->
+                                    <!--<field name="ten_percent_cover"/>-->
+                                <!--</group>-->
+                            <!--</page>-->
+                        <!--</notebook>-->
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sample_base_search" model="ir.ui.view">
+            <field name="name">sample base search</field>
+            <field name="model">sample.base</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="sample_id"/>
+                    <field name="datelanded"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="sample_base_action" model="ir.actions.act_window">
+            <field name="name">檢體資料</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sample.base</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                <!-- Add Text Here -->
+              </p><p>
+                <!-- More details about what a user can do with this object will be OK -->
+              </p>
+            </field>
+        </record>
+
+        <report
+            id="cancer_report"
+            model="sample.base"
+            string="癌症報告列印"
+            report_type="docx"
+            name="gene_base.cancer_report"
+            file="gene_base.cancer_report"
+            attachment_use="True"
+            attachment="123.doc"
+        />
+    </data>
+</odoo>

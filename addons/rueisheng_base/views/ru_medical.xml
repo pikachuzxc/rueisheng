@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="ru_medical_tree" model="ir.ui.view">
+            <field name="name">ru medical tree</field>
+            <field name="model">ru.medical</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <!--<field name="medic_name"/>-->
+                    <!--<field name="pharmacist"/>-->
+                    <!--<field name="TFDA"/>-->
+                    <!--<field name="health_insurance_provided"/>-->
+                </tree>
+            </field>
+        </record>
+
+        <record id="ru_medical_form" model="ir.ui.view">
+            <field name="name">ru medical form</field>
+            <field name="model">ru.medical</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <!--<field name="gene"/>-->
+                    <group col="4">
+                        <!--<field name="medic_name"/>-->
+                        <!--<field name="trade_name"/>-->
+                        <!--<field name="type"/>-->
+                        <!--<field name="FDA"/>-->
+                        <!--<field name="pharmacist"/>-->
+                        <!--<field name="TFDA"/>-->
+                        <!--<field name="health_insurance_provided"/>-->
+                    </group>
+
+                        <notebook>
+                            <page string="序列資料">
+                                <!--<field name="medicine_gene">-->
+                                    <!--<tree editable="bottom">-->
+                                        <!--<field name="medicine_gene" options="{'no_quick_create': True, 'no_create_edit' : True}"/>-->
+                                    <!--</tree>-->
+                                <!--</field>-->
+                            </page>
+                            <page string="檢體資料">
+                                <!--<field name="medicine_gene">-->
+                                    <!--<tree editable="bottom">-->
+                                        <!--<field name="medicine_gene" options="{'no_quick_create': True, 'no_create_edit' : True}"/>-->
+                                    <!--</tree>-->
+                                <!--</field>-->
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="ru_medical_search" model="ir.ui.view">
+            <field name="name">ru medical search</field>
+            <field name="model">ru.medical</field>
+            <field name="arch" type="xml">
+                <search>
+
+                </search>
+            </field>
+        </record>
+
+        <record id="ru_medical_action" model="ir.actions.act_window">
+            <field name="name">病歷資料</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ru.medical</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                <!-- Add Text Here -->
+              </p><p>
+                <!-- More details about what a user can do with this object will be OK -->
+              </p>
+            </field>
+        </record>
+    </data>
+</odoo>

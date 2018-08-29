@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="ru_gene_tree" model="ir.ui.view">
+            <field name="name">ru genet tree</field>
+            <field name="model">ru.gene</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="gene"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="ru_gene_form" model="ir.ui.view">
+            <field name="name">ru genet form</field>
+            <field name="model">ru.gene</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <!--<div class="oe_button_box" name="button_box">-->
+                            <!--<button name="import_gene_impact" string="匯入基因Excel" type="object" class="oe_stat_button"-->
+                                     <!--icon="fa-file-text">-->
+                            <!--</button>-->
+                        <!--</div>-->
+
+                        <group col="2">
+                            <field name="gene"/>
+                        </group>
+
+                        <notebook>
+                            <page string="藥物資料">
+                                <!--<field name="gene_medicine">-->
+                                    <tree editable="bottom">
+                                        <field name="gene_medicine" options="{'no_quick_create': True, 'no_create_edit' : True}"/>
+                                    </tree>
+                                <!--</field>-->
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="ru_gene_search" model="ir.ui.view">
+            <field name="name">ru genet search</field>
+            <field name="model">ru.gene</field>
+            <field name="arch" type="xml">
+                <search>
+
+                </search>
+            </field>
+        </record>
+
+        <record id="ru_gene_action" model="ir.actions.act_window">
+            <field name="name">基因資料</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ru.gene</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                <!-- Add Text Here -->
+              </p><p>
+                <!-- More details about what a user can do with this object will be OK -->
+              </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="sequence_variation_table_tree" model="ir.ui.view">
+            <field name="name">sequence variation table tree</field>
+            <field name="model">sequence.variation.table</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="chromosome"/>
+                    <field name="gene"/>
+                    <field name="total_sequence_variation"/>
+                    <field name="SNV"/>
+                    <field name="INDEL"/>
+                    <field name="M_SE"/>
+                    <field name="N_SE"/>
+                    <field name="SYN"/>
+                    <field name="UTR1"/>
+                    <field name="UTR2"/>
+                    <field name="INGE"/>
+                    <field name="INTR"/>
+                    <field name="A"/>
+                    <field name="B"/>
+                    <field name="C"/>
+                    <field name="D"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sequence_variation_table_form" model="ir.ui.view">
+            <field name="name">sequence variation table form</field>
+            <field name="model">sequence.variation.table</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="6">
+                             <field name="chromosome"/>
+                            <field name="gene"/>
+                            <field name="total_sequence_variation"/>
+                        </group>
+                        <span STYLE='font-size:25px'>序列變異種類</span>
+                        <group col="6">
+                            <field name="SNV"/>
+                            <field name="INDEL"/>
+                            <field name="M_SE"/>
+                            <field name="N_SE"/>
+                            <field name="SYN"/>
+                            <field name="UTR1"/>
+                            <field name="UTR2"/>
+                            <field name="INGE"/>
+                            <field name="INTR"/>
+                        </group>
+                        <span STYLE='font-size:25px'>基因功能影響評估</span>
+                        <group col="8">
+                            <field name="A"/>
+                            <field name="B"/>
+                            <field name="C"/>
+                            <field name="D"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sequence_variation_table_search" model="ir.ui.view">
+            <field name="name">sequence variation table search</field>
+            <field name="model">sequence.variation.table</field>
+            <field name="arch" type="xml">
+                <search>
+                </search>
+            </field>
+        </record>
+
+        <record id="sequence_variation_table_action" model="ir.actions.act_window">
+            <field name="name">序列變異綜合表</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sequence.variation.table</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                <!-- Add Text Here -->
+              </p><p>
+                <!-- More details about what a user can do with this object will be OK -->
+              </p>
+            </field>
+        </record>
+    </data>
+</odoo>

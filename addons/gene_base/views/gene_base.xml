@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="gene_base_view_tree" model="ir.ui.view">
+            <field name="name">gene_base_view_tree</field>
+            <field name="model">gene.base</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <!--<field name="parent_id"/>-->
+                    <!--<field name="dbSNP"/>-->
+                </tree>
+            </field>
+        </record>
+
+        <record id="gene base form" model="ir.ui.view">
+            <field name="name">gene_base_form</field>
+            <field name="model">gene.base</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <!--<group>-->
+                            <!--<field name="name"/>-->
+                        <!--</group>-->
+                        <!--<page string="文字一">-->
+
+                        <!--</page>-->
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="gene_base_view_action" model="ir.actions.act_window">
+            <field name="name">gene_base_view_action</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">gene.base</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                <!-- Add Text Here -->
+              </p><p>
+                <!-- More details about what a user can do with this object will be OK -->
+              </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

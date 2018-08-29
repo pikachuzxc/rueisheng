@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="subject_base_tree" model="ir.ui.view">
+            <field name="name">subject base tree</field>
+            <field name="model">subject.base</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="patient_number"/>
+                    <field name="sample_number"/>
+                    <field name="check_number"/>
+                    <field name="name"/>
+                    <field name="report_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="subject_base_form" model="ir.ui.view">
+            <field name="name">subject base form</field>
+            <field name="model">subject.base</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+
+                    </header>
+                    <sheet>
+                         <div class="oe_button_box" name="button_box">
+                            <button name="import_sequence_variation" string="匯入序列Excel"
+                                    type="object" class="oe_stat_button" icon="fa-file-text">
+                            </button>
+                            <button name="import_gene_impact" string="匯入基因Excel"
+                                    type="object" class="oe_stat_button" icon="fa-file-text">
+                            </button>
+                            <!--<button name="delete_off_target_data" string="刪除有off_target的資料"-->
+                                    <!--type="object" class="oe_stat_button" icon="fa-times" >-->
+                            <!--</button>-->
+                            <button name="delete_c_dna_field_c_point" string="去除基因功能的c."
+                                    type="object" class="oe_stat_button" icon="fa-times" >
+                            </button>
+                        </div>
+                            <group col="4">
+                                <field name="title_chi"/>
+                                <field name="title_eng"/>
+                                <field name="report_date"/>
+                            </group>
+                        <notebook>
+                            <page string="受測者資料">
+                                <group col="4">
+                                    <field name="name"/>
+                                    <field name="id_card"/>
+                                    <field name="sex"/>
+                                    <field name="birth"/>
+                                    <field name="phone"/>
+                                    <field name="address"/>
+                                    <field name="email"/>
+                                    <field name="client_code"/>
+                                </group>
+                                <span STYLE='font-size:25px'>檢測項目</span>
+                                 <group col="8">
+                                    <field name="TSOne"/>
+                                    <field name="TSCancer"/>
+                                    <field name="TSColon"/>
+                                    <field name="BRCAL"/>
+                                    <field name="TSLung"/>
+                                    <field name="TSBreast"/>
+                                    <field name="Other_test"/>
+                                </group>
+                                <group col="2">
+                                    <field name="disease_text"/>
+                                </group>
+                            </page>
+                            <page string="檢測結果">
+                                <group col="4">
+                                    <field name="patient_number"/>
+                                    <field name="sample_number"/>
+                                    <field name="check_number"/>
+                                    <field name="execute_date"/>
+                                    <field name="submission_date"/>
+                                    <field name="receipt_date"/>
+                                </group>
+                                <span STYLE='font-size:25px'>檢測結果</span>
+                                <group col="2">
+                                    <field name="test_result"/>
+                                </group>
+                                <span STYLE='font-size:25px'>負責人</span>
+                                <group col="4">
+                                    <field name="lab_manager"/>
+                                    <field name="report_sign"/>
+                                </group>
+                            </page>
+                            <page string="序列變異綜合">
+                                <group>
+                                    <field name="sequence_variation_code">
+                                        <tree editable="bottom">
+                                            <field name="chromosome"/>
+                                            <field name="gene"/>
+                                            <field name="total_sequence_variation"/>
+                                            <field name="SNV"/>
+                                            <field name="INDEL"/>
+                                            <field name="M_SE"/>
+                                            <field name="N_SE"/>
+                                            <field name="SYN"/>
+                                            <field name="UTR1"/>
+                                            <field name="UTR2"/>
+                                            <field name="INGE"/>
+                                            <field name="INTR"/>
+                                            <field name="A"/>
+                                            <field name="B"/>
+                                            <field name="C"/>
+                                            <field name="D"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                            </page>
+                            <page string="基因功能影響">
+                                <group>
+                                    <field name="gene_impact_code"/>
+                                </group>
+                            </page>
+                            <page string="定序實驗結果說明">
+                                <group col="4">
+                                    <field name="sample_id"/>
+                                    <field name="pathology"/>
+                                </group>
+                                <group col="4">
+                                    <field name="sample_resource_code"/>
+                                    <field name="DNA_extract_code"/>
+                                    <field name="sequence_set"/>
+                                    <field name="sequence_platform_code"/>
+                                    <field name="sequence_mode"/>
+                                    <field name="Prelim_lib"/>
+                                    <field name="Comparison_data"/>
+                                    <field name="human_reading"/>
+                                    <field name="human_percent"/>
+                                    <field name="target_reading"/>
+                                    <field name="target_percent"/>
+                                     <field name="sequence_cover"/>
+                                    <field name="lab_address"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="subject_base_search" model="ir.ui.view">
+            <field name="name">subject base search</field>
+            <field name="model">subject.base</field>
+            <field name="arch" type="xml">
+                <search>
+
+                </search>
+            </field>
+        </record>
+
+        <record id="subject_base_action" model="ir.actions.act_window">
+            <field name="name">受測者資料</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">subject.base</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                <!-- Add Text Here -->
+              </p><p>
+                <!-- More details about what a user can do with this object will be OK -->
+              </p>
+            </field>
+        </record>
+
+        <report
+            id="cancer_report"
+            model="subject.base"
+            string="癌症基因變異檢測報告"
+            report_type="docx"
+            name="gene_base.cancer_report"
+            file="gene_base.cancer_report"
+            attachment_use="True"
+            attachment="123.doc"
+        />
+    </data>
+</odoo>

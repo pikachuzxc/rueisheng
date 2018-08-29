@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="gene_main_view_tree" model="ir.ui.view">
+            <field name="name">gene_main_view_tree</field>
+            <field name="model">gene.main</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="name"/>
+                    <field name="person_id"/>
+                    <field name="gene_ids"/>
+                    <field name="test_field"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="gene_main_view_form" model="ir.ui.view">
+            <field name="name">gene_main_view_form</field>
+            <field name="model">gene.main</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <header>
+                        <button name="import_gene_excel" string="匯入基因excel" type="object"/>
+                        <button name="sample" string="測試" type="object"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="person_id"/>
+                            <field name="gene_ids"/>
+                            <field name="test_field"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="gene_main_view_action" model="ir.actions.act_window">
+            <field name="name">gene_main_view_action</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">gene.main</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                <!-- Add Text Here -->
+              </p><p>
+                <!-- More details about what a user can do with this object will be OK -->
+              </p>
+            </field>
+        </record>
+        <report
+                id="gene_report"
+                model="gene.main"
+                string="測試列印"
+                report_type="docx"
+                name="gene_base.gene_report"
+                file="gene_base.gene_report"
+                attachment_use="True"
+                attachment="123.doc"
+
+        />
+    </data>
+</odoo>

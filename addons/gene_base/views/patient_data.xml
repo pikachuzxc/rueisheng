@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="patient_data_tree" model="ir.ui.view">
+            <field name="name">patient data tree</field>
+            <field name="model">patient.data</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="id_card"/>
+                    <field name="address"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="patient_data_form" model="ir.ui.view">
+            <field name="name">patient data form</field>
+            <field name="model">patient.data</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="4">
+                            <field name="name"/>
+                            <field name="sex"/>
+                            <field name="birth"/>
+                            <field name="id_card"/>
+                            <field name="phone"/>
+                            <field name="address"/>
+                            <field name="email"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="patient_data_search" model="ir.ui.view">
+            <field name="name">patient data search</field>
+            <field name="model">patient.data</field>
+            <field name="arch" type="xml">
+                <search>
+                     <field name="name"/>
+                     <field name="id_card"/>
+                     <field name="email"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="patient_data_action" model="ir.actions.act_window">
+            <field name="name">patient data action</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">patient.data</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                <!-- Add Text Here -->
+              </p><p>
+                <!-- More details about what a user can do with this object will be OK -->
+              </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

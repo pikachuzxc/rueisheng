@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <menuitem id="cancer_root" name="癌症報告" sequence="1"/>
+        <menuitem id="cancer_categ" name="癌症報告資料" parent="cancer_root" sequence=""/>
+        <menuitem id="subject_base_menu"
+                  name="受測者資料"
+                  parent="cancer_categ"
+                  action="subject_base_action"
+                  sequence="1"/>
+        <menuitem id="medicine_data_menu"
+                  name="藥物資料"
+                  parent="cancer_categ"
+                  action="medicine_data_action"
+                  sequence="2"/>
+        <menuitem id="report_doc_menu"
+                  name="報告文件"
+                  parent="cancer_categ"
+                  action="report_doc_action"
+                  sequence="3"/>
+
+    </data>
+</odoo>

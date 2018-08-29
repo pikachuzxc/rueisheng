@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="title_id_form" model="ir.ui.view">
+            <field name="name">title id form</field>
+            <field name="model">title.id</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="4">
+                            <field name="name"/>
+                            <field name="name_eng"/>
+                            <field name="TSOne"/>
+                            <field name="TSCancer"/>
+                            <field name="TSColon"/>
+                            <field name="BRCAL"/>
+                            <field name="TSLung"/>
+                            <field name="TSBreast"/>
+                            <field name="Other_test"/>
+                        </group>
+                        <group>
+                            <field name="sequence_variation_code"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="title_id_action" model="ir.actions.act_window">
+            <field name="name">title id action</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">title.id</field>
+            <field name="view_mode">form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                <!-- Add Text Here -->
+              </p><p>
+                <!-- More details about what a user can do with this object will be OK -->
+              </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

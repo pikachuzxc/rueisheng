@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="gene_impact_tree" model="ir.ui.view">
+            <field name="name">gene impact tree</field>
+            <field name="model">gene.impact</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="category"/>
+                    <field name="gene"/>
+                    <field name="type"/>
+                    <field name="codingConsequence"/>
+                    <field name="var_percent"/>
+                    <field name="c_DNA"/>
+                    <field name="new_protein"/>
+                    <field name="sequence_depth"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="gene_impact_form" model="ir.ui.view">
+            <field name="name">gene impact form</field>
+            <field name="model">gene.impact</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="4">
+                              <field name="category"/>
+                              <field name="gene"/>
+                              <field name="type"/>
+                              <field name="codingConsequence"/>
+                              <field name="var_percent"/>
+                              <field name="c_DNA"/>
+                              <field name="new_protein"/>
+                              <field name="sequence_depth"/>
+                        </group>
+                        <group>
+                            <field name="impact_medicine_code"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="gene_impact_search" model="ir.ui.view">
+            <field name="name">gene impact search</field>
+            <field name="model">gene.impact</field>
+            <field name="arch" type="xml">
+                <search>
+
+                </search>
+            </field>
+        </record>
+
+        <record id="gene_impact_action" model="ir.actions.act_window">
+            <field name="name">基因功能影響評估</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">gene.impact</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                <!-- Add Text Here -->
+              </p><p>
+                <!-- More details about what a user can do with this object will be OK -->
+              </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>
